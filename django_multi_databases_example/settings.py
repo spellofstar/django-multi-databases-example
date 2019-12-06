@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'auth.apps.AuthConfig'
+    'userauth.apps.UserauthConfig'
+
 ]
 
 MIDDLEWARE = [
@@ -140,7 +141,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-AUTH_USER_MODEL = 'auth.User'
+AUTH_USER_MODEL = 'userauth.User'
 
 DATABASE_ROUTERS = [
     'django_multi_databases_example.default_router.DefaultRouter',
