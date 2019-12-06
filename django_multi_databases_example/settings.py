@@ -88,7 +88,7 @@ DATABASES = {
                     'use_unicode': True,
             },
     },
-    'user': {
+    'auth': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'auth',
             'USER': 'sampleid',
@@ -140,3 +140,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+AUTH_USER_MODEL = 'auth.User'
+
+DATABASE_ROUTERS = [
+    'django_multi_databases_example.default_router.DefaultRouter',
+]
