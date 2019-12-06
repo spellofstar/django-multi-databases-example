@@ -76,8 +76,28 @@ WSGI_APPLICATION = 'django_multi_databases_example.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'default',
+            'USER': 'sampleid',
+            'PASSWORD': 'samplepw',
+            'HOST': 'localhost',
+            'PORT': '3306',
+            'OPTIONS': {
+                    'charset': 'utf8',
+                    'use_unicode': True,
+            },
+    },
+    'user': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'auth',
+            'USER': 'sampleid',
+            'PASSWORD': 'samplepw',
+            'HOST': 'localhost',
+            'PORT': '3306',
+            'OPTIONS': {
+                    'charset': 'utf8',
+                    'use_unicode': True,
+                    "init_command": "SET foreign_key_checks = 0;",},
     }
 }
 
